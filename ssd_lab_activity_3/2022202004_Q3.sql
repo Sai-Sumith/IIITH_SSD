@@ -1,0 +1,1 @@
+select d.Mgr_ssn,de.counts from DEPARTMENT as d inner join (select count(Pno) as counts ,Essn from WORKS_ON group by Essn having Essn in(select Mgr_ssn from DEPARTMENT where Dnumber in  (select Dnum from PROJECT where Pname='ProductY'))) as de on d.Mgr_ssn=de.Essn;
