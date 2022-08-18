@@ -1,0 +1,1 @@
+select e.Fname,e.Minit,e.Lname ,em.counts,e.Ssn from EMPLOYEE as e  inner join (select count(Ssn) as counts ,Super_ssn from EMPLOYEE group by Super_ssn having count(Super_ssn)>0) as em on e.Ssn=em.Super_ssn order by em.counts;
