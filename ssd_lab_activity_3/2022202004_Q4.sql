@@ -1,0 +1,1 @@
+select d.Dname,d.Dnumber ,de.counts from DEPARTMENT AS d inner join (select count(Dnumber) as counts,Dnumber from DEPT_LOCATIONS group by Dnumber having Dnumber in (select Dnumber from DEPARTMENT WHERE Mgr_ssn in (select Essn from DEPENDENT group by ESSN having count(Sex='F')>1))) as de on d.Dnumber=de.Dnumber;
