@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head> </head>
+<body id="bod">
+<h1 id="heading"><b>Student Records </b></h1>
+<form action="" id="for">
+    <label for="rno"></label>
+    <input type="text" id="rno" placeholder="Rollno">
+    <label for="nam"></label>
+    <input type="text" id="nam" placeholder="Name">
+    <input type="submit" id="sub" value="Addnow">
+  </form>
+  <style>
+    td,th{
+      border:1px solid black;
+      
+    }
+    table,th,td{
+        border-collapse: collapse;
+    }
+    </style>
+  <table id="table" >
+    <tr>
+        <th >Roll No</th>
+        <th id ="the" style="padding-right: 200px;">Name</th>
+    </tr>
+</table>
+<div style="padding-left:500px">
+    <button type="Button" id="delete">Delete Last Entry</button>
+    
+</div>
+<script type="text/javascript">
+    counter=0;
+    document.getElementById("sub").onclick=function()
+    {
+        
+        document.getElementById("table").style.display="block";
+        
+        var table = document.getElementById("table");
+        var row = table.insertRow(-1);
+        var rollno = row.insertCell(0);
+        var name = row.insertCell(1);
+        rollno.innerHTML = document.getElementById("rno").value;
+        
+        name.innerHTML = document.getElementById("nam").value;
+        document.querySelector("#nam").value="";
+        document.querySelector("#rno").value=""; 
+        counter+=1;   
+        return false;
+    }
+    document.getElementById("delete").onclick=function()
+    {
+        if(counter>0){
+        document.getElementById("table").deleteRow(-1);   
+        counter-=1;
+        } 
+        return false;
+    }
+</script>
+<style>
+    
+    #bod{
+        background-color:#708090;
+    }
+    #sub{
+        background-color: #008000;
+    }
+    #delete{
+        background-color: #FF0000;
+    }
+    #heading{
+        padding-top: 100px;
+        padding-left: 500px;
+    }
+    #for{
+        padding-left: 400px;
+    }
+    th,tr{
+        text-align: center;
+        width:80%;
+        padding-left:200px;
+    }
+    
+</style>
+</body>
+</html>
