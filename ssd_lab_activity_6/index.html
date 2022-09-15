@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="bod">
+<h1 id="heading"><b>Team Form </b></h1>
+
+<form onsubmit="allvalid()" id="for">
+    <div class="form-field1">
+    <label for="mname" style="padding-right:30px;">Manager Name</label>
+    <input type="text" id="mname" ><br><br>
+    </div>
+    <div class="form-field2">
+    <label for="gemail" style="padding-right: 45px;">Group Email</label>
+    <input type="text" id="gemail" onfocusout="ValidateEmail();" />
+    <span id="error" style="color: red"></span>  
+    </div>
+    <div class="form-field3">
+    <label for="suname" style="padding-right: 18px;">Server Username</label>
+    <input type="text" id="suname" onkeyup="ValidateUname();" />
+    <span id="unamerror" style="color: red"></span>
+    </div>
+
+    <div class="form-field4">
+    <label for="spwd" style="padding-right:21px;">Server Password</label>
+    <input type="password" id="spwd"><br><br>
+    </div>
+
+    <label for="cpwd" style="padding-right:10px;">Confirm Password</label>
+    <input type="password" id="cpwd" onfocusout= "ValidatePwd();">
+    <span id="perror" style="color: red"></span><br><br>
+
+    <div class="form-field6">
+    <label for="tlead" style="padding-right:60px;">Team Lead</label>
+<select name="teamlead" id="teamlead" style="padding-right:30px;">
+  <option value="Teamlead A">Team Lead A</option>
+  <option value="Teamlead B">Team Lead B</option>
+  <option value="Teamlead C">Team Lead C</option>
+  <option value="Teamlead D">Team Lead D</option>
+</select><br><br>
+    <input type="submit" value="Submit" id="sub">
+  </form>
+
+<script src="valid.js"></script>
+</body>
+</html>
+
